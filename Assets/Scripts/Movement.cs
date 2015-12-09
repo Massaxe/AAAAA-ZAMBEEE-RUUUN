@@ -13,8 +13,8 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        float mx = Input.GetAxisRaw("Horizontal");
-        float mz = Input.GetAxisRaw("Vertical");
+        float mx = Input.GetAxis("Horizontal");
+        float mz = Input.GetAxis("Vertical");
         var movement = new Vector3(mx, 0f, mz);
 
         Player.velocity += movement * speed * Time.deltaTime;
