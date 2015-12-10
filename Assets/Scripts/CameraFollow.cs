@@ -8,14 +8,16 @@ public class CameraFollow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
         Vector3 playerPos = new Vector3(Player.position.x, transform.position.y, Player.position.z - 50);
 
-        transform.position = Vector3.SmoothDamp(transform.position, playerPos,ref v3, smoothDamp);
+        transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref v3, smoothDamp);
 	
 	}
 }

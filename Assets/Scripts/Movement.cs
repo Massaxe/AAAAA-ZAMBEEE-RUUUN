@@ -17,10 +17,11 @@ public class Movement : MonoBehaviour {
         float mz = Input.GetAxis("Vertical");
         var movement = new Vector3(mx, 0f, mz);
 
-        Player.velocity += movement * speed * Time.deltaTime;
+        //Player.velocity += movement * speed * Time.deltaTime;
+        transform.position += (movement * speed * Time.deltaTime);
 
-        if (movement == Vector3.zero)
-            Player.velocity = new Vector3(0, 0, 0);
+        //if (movement == Vector3.zero)
+           // Player.velocity = new Vector3(0, 0, 0);
 	
 	}
 }
