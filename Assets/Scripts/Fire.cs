@@ -8,10 +8,13 @@ public class Fire : MonoBehaviour {
     LineRenderer fireLine;
     public bool Fired = false;
     public float fireRate = 1;
+    Light fireLight;
 	// Use this for initialization
 	void Start () {
         fireLine = GetComponent<LineRenderer>();
         fireLine.enabled = false;
+        fireLight = GetComponent<Light>();
+        fireLight.enabled = false;
 	
 	}
 	
@@ -23,9 +26,14 @@ public class Fire : MonoBehaviour {
         {
             StartCoroutine(fireTimer());
             fireLine.enabled = true;
+            fireLight.enabled = true;
         }
         else
+        {
             fireLine.enabled = false;
+            fireLight.enabled = false;
+        }
+            
         
 	
 	}
