@@ -5,6 +5,7 @@ public class EnemyMovement : MonoBehaviour {
 
     public NavMeshAgent NAgent;
     public Transform goal;
+    public bool PlayerDead = false;
 	// Use this for initialization
 	void Start () {
         NAgent = GetComponent<NavMeshAgent>();
@@ -20,4 +21,12 @@ public class EnemyMovement : MonoBehaviour {
         }
 	
 	}
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.collider.tag == "Player")
+        {
+            Destroy(col.collider.gameObject);
+            PlayerDead = true;
+        }
+    }
 }
