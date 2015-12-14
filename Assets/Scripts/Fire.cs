@@ -9,6 +9,8 @@ public class Fire : MonoBehaviour {
     public bool Fired = false;
     public float fireRate = 1;
     Light fireLight;
+
+
 	// Use this for initialization
 	void Start () {
         fireLine = GetComponent<LineRenderer>();
@@ -19,7 +21,7 @@ public class Fire : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 
 
         if (Input.GetMouseButton(0) && !Fired)
@@ -27,6 +29,8 @@ public class Fire : MonoBehaviour {
             StartCoroutine(fireTimer());
             fireLine.enabled = true;
             fireLight.enabled = true;
+            AudioSource ad = GetComponent<AudioSource>();
+            ad.Play();
         }
         else
         {
@@ -39,12 +43,14 @@ public class Fire : MonoBehaviour {
 	}
     void PlayerFire()
     {
-
+        Score s = new Score();
         Debug.DrawRay(transform.position, transform.forward * 5, Color.green);
         Ray ray = new Ray(transform.position, transform.forward);
 
         if (Physics.Raycast(ray, out rhit, range, shootable))
         {
+            s.KillCounter();
+            s.killCount++;
             print("Raycast works: " + rhit);
             Destroy(rhit.transform.gameObject);
         }

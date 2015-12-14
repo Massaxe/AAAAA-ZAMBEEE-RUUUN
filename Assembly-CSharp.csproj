@@ -45,17 +45,26 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Restart.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
      <Compile Include="Assets\Scripts\Fire.cs" />
      <Compile Include="Assets\Scripts\LookAtMouse.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\RandomText.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>D:/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

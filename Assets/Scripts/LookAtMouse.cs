@@ -24,4 +24,8 @@ public class LookAtMouse : MonoBehaviour {
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
         }
     }
+    public void test()
+    {
+        Application.LoadLevel("Main");
+    }
 }

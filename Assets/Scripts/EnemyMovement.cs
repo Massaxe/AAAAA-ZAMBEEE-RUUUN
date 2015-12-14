@@ -5,11 +5,14 @@ public class EnemyMovement : MonoBehaviour {
 
     public NavMeshAgent NAgent;
     public Transform goal;
+    public AudioSource ad;
     public bool PlayerDead = false;
 	// Use this for initialization
 	void Start () {
         NAgent = GetComponent<NavMeshAgent>();
-        goal = GameObject.FindGameObjectWithTag("Player").transform;
+
+        goal = GameObject.FindGameObjectWithTag("Player").transform; 
+
 	
 	}
 	
@@ -28,5 +31,11 @@ public class EnemyMovement : MonoBehaviour {
             Destroy(col.collider.gameObject);
             PlayerDead = true;
         }
+    }
+    public void DieSound()
+    {
+        ad.Play();
+
+
     }
 }
